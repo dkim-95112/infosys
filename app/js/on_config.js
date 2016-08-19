@@ -1,4 +1,4 @@
-function OnConfig($stateProvider, $locationProvider, $urlRouterProvider, $compileProvider) {
+function OnConfig($stateProvider, $locationProvider, $urlRouterProvider, $compileProvider, $mdIconProvider) {
   'ngInject';
 
   if (process.env.NODE_ENV === 'production') {
@@ -17,6 +17,8 @@ function OnConfig($stateProvider, $locationProvider, $urlRouterProvider, $compil
 
   $urlRouterProvider.otherwise('/');
 
+    $mdIconProvider.icon('menu', './images/menu.svg', 24);
+  console.log('finished OnConfig');
 }
 
 export default OnConfig;
