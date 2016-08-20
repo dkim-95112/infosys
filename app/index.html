@@ -45,6 +45,24 @@
       </md-content>
     </div>
 
-    <script src="js/main.js"></script>
+    <script>
+      var xhr = new XMLHttpRequest();
+      xhr.open("GET", "js/rev-manifest.json");
+      xhr.responseType = "json";
+
+      xhr.onload = function(){
+        var manifest = xhr.response;
+        var el = document.createElement('script');
+        el.async = true;
+        el.src = 'js/' + manifest['main.js'];
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(el, s);
+      };
+      xhr.addEventListener("error", function(){
+        debugger
+      });
+      xhr.send();
+
+    </script>
   </body>
 </html>

@@ -15,6 +15,7 @@ import bulkify      from 'bulkify';
 import envify       from 'envify';
 import handleErrors from '../util/handleErrors';
 import bundleLogger from '../util/bundleLogger';
+import rev          from 'gulp-rev';
 import config       from '../config';
 
 // Based on: http://blog.avisi.nl/2014/04/25/how-to-keep-a-fast-build-with-browserify-and-reactjs/
@@ -66,7 +67,13 @@ function buildScript(file) {
       }))))
       .pipe(gulpif(shouldCreateSourcemap, sourcemaps.write(sourceMapLocation)))
       .pipe(gulp.dest(config.scripts.dest))
-      .pipe(browserSync.stream());
+      .pipe(browserSync.stream())
+
+      .pipe(rev())
+      .pipe(gulp.dest(config.scripts.dest))
+      .pipe(rev.manifest())
+      .pipe(gulp.dest(config.scripts.dest))
+      ;
   }
 
   return rebundle();
