@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="css/main.css">
   </head>
 
-  <body layout="column" ng-controller="LeftNavCtrl as nv">
+  <body layout="column" ng-cloak ng-controller="LeftNavCtrl as nv">
 
     <md-toolbar layout="row" class="md-toolbar-tools">
       <md-button class="menu md-icon-button" ng-click="nv.toggleSideNav()" aria-label="Left Nav Menu">
@@ -34,6 +34,12 @@
           <md-list-item >
             <md-button ui-sref="Reports" >
               Reports
+            </md-button>
+          </md-list-item>
+
+          <md-list-item >
+            <md-button ui-sref="Signup" >
+              Signup
             </md-button>
           </md-list-item>
 

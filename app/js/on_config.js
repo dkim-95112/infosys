@@ -17,6 +17,11 @@ function OnConfig($stateProvider, $locationProvider, $urlRouterProvider, $compil
     url: '/reports',
     controller: 'ReportsCtrl as reports',
     templateUrl: 'reports.html'
+  })
+  .state('Signup', {
+    url: '/signup',
+    controller: 'SignupCtrl as signup',
+    templateUrl: 'signup.html'
   });
 
   $urlRouterProvider.otherwise('/');

@@ -33,6 +33,7 @@ export default {
   },
 
   assetExtensions: [
+    'json',
     'js',
     'css',
     'png',
