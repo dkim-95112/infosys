@@ -11,32 +11,29 @@
     <link rel="stylesheet" href="css/angular-material.css">
     <link rel="stylesheet" href="css/main.css">
   </head>
-  <body layout="column" ng-controller="PageCtrl as pg">
+
+  <body layout="column" ng-controller="LeftNavCtrl as nv">
 
     <md-toolbar layout="row" class="md-toolbar-tools">
-      <md-button class="menu md-icon-button" ng-click="pg.toggleSideNav()">
+      <md-button class="menu md-icon-button" ng-click="nv.toggleSideNav()" aria-label="Left Nav Menu">
         <md-icon md-svg-icon="menu"></md-icon>
       </md-button>
       <h1>Angular Material - Starter App</h1>
     </md-toolbar>
 
     <div flex layout="row" >
-      <md-sidenav md-component-id="left" class="md-whiteframe-z2">
-        <md-list>
+      <md-sidenav md-component-id="left" class="md-sidenav-left">
+        <md-list ng-click="nv.toggleSideNav()">
 
-          <!-- List item #1 -->
           <md-list-item >
-            <md-button>
-              <md-icon md-svg-src="./assets/svg/avatar-1.svg" class="avatar"></md-icon>
-              Lia Luogo
+            <md-button ui-sref="Home" >
+              Home
             </md-button>
           </md-list-item>
 
-          <!-- List item #2 -->
           <md-list-item >
-            <md-button>
-              <md-icon md-svg-src="./assets/svg/avatar-4.svg" class="avatar"></md-icon>
-              Lawrence Ray
+            <md-button ui-sref="Reports" >
+              Reports
             </md-button>
           </md-list-item>
 
