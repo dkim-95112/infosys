@@ -1,19 +1,16 @@
 <h1 class="heading -large">{{ signup.title | ExampleFilter }}</h1>
 
-<form name="myForm">
+<form>
 
   <div layout="row">
     <md-input-container>
       <label>First</label>
-      <input type="text" name="first" ng-model="first" required>
+      <input type="text" name="first" ng-model="formData.first" required>
     </md-input-container>
   </div>
 
   <div layout="row">
-    <md-button ng-click="save()" class="md-primary" ng-disabled="!first">Save</md-button>
+    <md-button ng-click="save()" class="md-primary" ng-disabled="!formData.first">Save</md-button>
   </div>
 
 </form>
-
-<hr/>
-<div example-directive title="WOW!" click-message="You clicked me!">Directive is not loaded.</div>
