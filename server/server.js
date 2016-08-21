@@ -1,5 +1,6 @@
 var express = require('express');
 var bodyParser = require('body-parser'); // for request.body
+var fs = require('fs');
 
 var staticPath = __dirname + '/../build';
 console.log('staticPath: ' + staticPath);
@@ -30,6 +31,8 @@ userRouter
   .use(bodyParser.json())
   .post('/', function (req, res) {
     debugger
+    var writeFile = 'users.log';
+    fs.writeFileSync(writeFile, JSON.stringify(req.body, null, 4));
   });
 
 var port = process.env.PORT || 8080;
