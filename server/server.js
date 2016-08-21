@@ -1,17 +1,17 @@
-var express = require('express');        // call express
-var bodyParser = require('body-parser');
+var express = require('express');
+var bodyParser = require('body-parser'); // for request.body
 
+var staticPath = __dirname + '/../build';
+console.log('staticPath: ' + staticPath);
 
 var appRouter = express.Router();
-var staticPath = __dirname + '/../build';
 appRouter
   .use('/js', express.static(staticPath + '/js'))
   .use('/css', express.static(staticPath + '/css'))
   .use('/images', express.static(staticPath + '/images'))
   .get('/*', function(req, res){
-    res.sendfile('index.html', { root: staticPath } );
+    res.sendFile('index.html', { root: staticPath } );
   });
-
 
 /*
  HTTP Verb	Description
@@ -38,7 +38,7 @@ app
   .use('/', appRouter)
   .use('/api/users', userRouter)
   .listen(port);
+console.log('listening on port ' + port);
 
 debugger
-console.log('Magic happens on port ' + port);
-console.log('staticPath: ' + staticPath);
+

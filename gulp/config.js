@@ -53,6 +53,11 @@ export default {
     dest: 'app/js'
   },
 
+  nodemon: {
+    src: 'server/**/*.js',
+    port: 8888
+  },
+
   gzip: {
     src: 'build/**/*.{html,xml,json,css,js,js.map,css.map}',
     dest: 'build/',

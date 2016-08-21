@@ -67,12 +67,14 @@ function buildScript(file) {
       }))))
       .pipe(gulpif(shouldCreateSourcemap, sourcemaps.write(sourceMapLocation)))
       .pipe(gulp.dest(config.scripts.dest))
-      .pipe(browserSync.stream())
 
+      // creating version stamp and manifest file
       .pipe(rev())
       .pipe(gulp.dest(config.scripts.dest))
       .pipe(rev.manifest())
       .pipe(gulp.dest(config.scripts.dest))
+
+      .pipe(browserSync.stream()) // notify browser-sync
       ;
   }
 
