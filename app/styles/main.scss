@@ -6,6 +6,10 @@ body {
   color: $font-color--dark;
 }
 
-md-list .md-button{
+.md-sidenav-left md-list-item .md-button {
+  margin: 0;
+  padding: 0 14px;
+  width: 100%;
+  line-height: 48px;
   text-align: left;
 }

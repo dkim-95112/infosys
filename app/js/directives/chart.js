@@ -29,7 +29,6 @@ function BarChart() {
       const barWidth = width / data.length;
 
       const chart = d3.select(element[0]).append('svg');
-      debugger
       chart
         .attr('width', width)
         .attr('height', height);
