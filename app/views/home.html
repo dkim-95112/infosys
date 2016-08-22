@@ -1,13 +1,15 @@
 <h1 class="heading -large">{{ home.title }}</h1>
 
-<md-grid-list md-cols-sm="1" md-cols-md="2" md-cols-lg="3" md-cols-gt-lg="4" md-row-height="100px">
-  <md-grid-tile>
-    <img src="images/angular.png" height="100" />
+<div class="my-dashboard">
+
+<md-grid-list md-cols-sm="1" md-cols-md="2" md-cols-lg="3" md-cols-gt-lg="4" md-gutter="1em" md-row-height="140px">
+
+  <md-grid-tile ng-repeat="d in home.dashboard"
+                md-whiteframe="4">
+      <img src="{{d.src}}" height="100" />
+      <md-grid-tile-footer><h3>{{d.text}}</h3></md-grid-tile-footer>
   </md-grid-tile>
-  <md-grid-tile>
-    <img src="images/gulp.png" height="100" />
-  </md-grid-tile>
-  <md-grid-tile>
-    <img src="images/browserify.png" height="100" />
-  </md-grid-tile>
+
 </md-grid-list>
+
+</div>

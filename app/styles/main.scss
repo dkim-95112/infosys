@@ -13,3 +13,13 @@ body {
   line-height: 48px;
   text-align: left;
 }
+
+.my-dashboard img {
+  position: absolute;
+  top: 5px;
+}
+.my-dashboard md-grid-tile-footer {
+  height: 30px;
+  justify-content: center;
+}
+

@@ -4,8 +4,18 @@ function HomeCtrl() {
   const vm = this;
 
   vm.title = 'HomeCtrl';
-  vm.number = 1234;
   console.log('in HomeCtrl');
+
+  vm.dashboard = [{
+    text: 'angular',
+    src: 'images/angular.png'
+  }, {
+    text: 'gulp',
+    src: 'images/gulp.png'
+  }, {
+    text: 'browserify',
+    src: 'images/browserify.png'
+  }];
 }
 
 export default {
