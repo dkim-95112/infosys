@@ -23,6 +23,15 @@ appRouter
  /api/users/:user_id	DELETE	Delete a bear.
  */
 var userRouter = express.Router();
+
+function validateForm(d) {
+  var reEmail = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  if(!reEmail.test(d.email)){
+    return {error: 'bad email format'};
+  }
+  return {success: 'success'};
+}
+
 userRouter
   .get('/', function (req, res) {
     res.json({messge: 'welcome to our api'});
@@ -30,9 +39,14 @@ userRouter
   //.use(bodyParser.urlencoded({ extended: false }))
   .use(bodyParser.json())
   .post('/', function (req, res) {
-    debugger
-    var writeFile = 'users.log';
-    fs.writeFileSync(writeFile, JSON.stringify(req.body, null, 4));
+    var result = validateForm(req.body);
+    if(result.success){
+      var writeFile = 'users.log';
+      fs.writeFileSync(writeFile, JSON.stringify(req.body, null, 4));
+      res.json({user_id: 1234});
+    } else {
+      res.json(JSON.stringify(result));
+    }
   });
 
 var port = process.env.PORT || 8080;
@@ -42,6 +56,4 @@ app
   .use('/api/users', userRouter)
   .listen(port);
 console.log('listening on port ' + port);
-
-debugger
 
