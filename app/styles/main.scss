@@ -20,6 +20,7 @@ body {
 }
 .my-dashboard md-grid-tile-footer {
   height: 30px;
+  height: 30px;
   justify-content: center;
 }
 
@@ -45,4 +46,9 @@ body {
 
 .my-chart .x.axis path {
   display: none;
+}
+
+form[name="my-form"]{
+  margin: 15px;
+  padding: 15px;
 }

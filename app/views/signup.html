@@ -1,13 +1,30 @@
 <h1 class="heading -large">{{ signup.title | ExampleFilter }}</h1>
 
-<form>
+<form name="my-form" md-whiteframe="4">
 
   <div layout="row">
-    <md-input-container>
-      <label>First</label>
-      <input type="text" name="first" ng-model="formData.first" required>
+    <md-input-container flex="50">
+      <input type="text" placeholder="First name" ng-model="formData.first" required>
     </md-input-container>
+    <md-input-container>
+      <input type="text" placeholder="Last name" ng-model="formData.last" required>
+    </md-input-container>
+
   </div>
+
+
+  <md-input-container class="md-block">
+    <!-- Use floating placeholder instead of label -->
+    <!--<md-icon md-svg-src="img/icons/ic_email_24px.svg" class="email"></md-icon>
+    -->
+    <input ng-model="formData.email" type="email" placeholder="Email (required)" ng-required="true">
+  </md-input-container>
+
+  <md-input-container md-no-float class="md-block">
+    <!--<md-icon md-svg-src="img/icons/ic_phone_24px.svg"></md-icon>
+    -->
+    <input ng-model="formData.phone" type="text" placeholder="Phone Number">
+  </md-input-container>
 
   <div layout="row">
     <md-button ng-click="save()" class="md-primary" ng-disabled="!formData.first">Save</md-button>
