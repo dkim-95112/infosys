@@ -23,3 +23,26 @@ body {
   justify-content: center;
 }
 
+.my-chart .bar {
+  fill: steelblue;
+}
+
+.my-chart .bar:hover{
+  fill: brown;
+}
+
+.my-chart .axis text {
+  font: 10px sans-serif;
+  fill: $font-color--dark;
+}
+
+.my-chart .axis path,
+.my-chart .axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.my-chart .x.axis path {
+  display: none;
+}
