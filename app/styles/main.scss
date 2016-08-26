@@ -14,41 +14,48 @@ body {
   text-align: left;
 }
 
-.my-dashboard img {
-  position: absolute;
-  top: 5px;
-}
-.my-dashboard md-grid-list {
-  margin: 10px;
-}
-.my-dashboard md-grid-tile-footer {
-  height: 30px;
-  height: 30px;
-  justify-content: center;
+.my-dashboard {
+
+  md-grid-list {
+    margin: 10px;
+
+    img {
+      position: absolute;
+      top: 5px;
+    }
+
+    md-grid-tile-footer {
+      height: 30px;
+      justify-content: center;
+    }
+  }
 }
 
-.my-chart .bar {
-  fill: steelblue;
-}
+.my-chart {
 
-.my-chart .bar:hover{
-  fill: brown;
-}
+  .bar {
+    fill: steelblue;
 
-.my-chart .axis text {
-  font: 10px sans-serif;
-  fill: $font-color--dark;
-}
+    :hover {
+      fill: brown;
+    }
+  }
 
-.my-chart .axis path,
-.my-chart .axis line {
-  fill: none;
-  stroke: #000;
-  shape-rendering: crispEdges;
-}
+  .axis {
+    text {
+      font: 10px sans-serif;
+      fill: $font-color--dark;
+    }
+    path, line {
+      fill: none;
+      stroke: #000;
+      shape-rendering: crispEdges;
+    }
 
-.my-chart .x.axis path {
-  display: none;
+    &.x path {
+      display: none;
+    }
+  }
 }
 
 form[name="myForm"]{
@@ -56,3 +63,4 @@ form[name="myForm"]{
   padding: 15px;
   max-width: 700px;
 }
+
