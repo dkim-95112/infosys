@@ -8,7 +8,7 @@ export default {
   buildDir: './build/',
 
   styles: {
-    src: ['app/styles/**/*.scss',
+    src: ['app/styles/**/*.scss','app/styles/**/*.sass',
       'node_modules/angular-material/angular-material.scss'],
     dest: 'build/css',
     prodSourcemap: false,

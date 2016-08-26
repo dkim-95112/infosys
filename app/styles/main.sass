@@ -1,0 +1,46 @@
+@import 'vars'
+@import 'typography'
+
+body
+  font-family: Helvetica, sans-serif
+  color: $font-color--dark
+
+.md-sidenav-left md-list-item .md-button
+  margin: 0
+  padding: 0 14px
+  width: 100%
+  line-height: 48px
+  text-align: left
+
+.my-dashboard
+  md-grid-list
+    margin: 10px
+    img
+      position: absolute
+      top: 5px
+    md-grid-tile-footer
+      height: 30px
+      justify-content: center
+
+.my-chart
+  .bar
+    fill: steelblue
+    &:hover
+      fill: brown
+  .axis
+    text
+      font: 10px sans-serif
+      fill: $font-color--dark
+    path, line
+      fill: none
+      stroke: #000
+      shape-rendering: crispEdges
+    &.x path
+      display: none
+
+form[name="myForm"]
+  margin: 15px
+  padding: 15px
+  max-width: 700px
+
+
