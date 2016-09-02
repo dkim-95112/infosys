@@ -26,6 +26,17 @@ const requires = [
 // mount on window for testing
 window.app = angular.module('app', requires);
 
+window.app.controller('mainCtrl', ['$scope', '$timeout', function($scope, $timeout){
+    this.name = 'mainCtrl';
+    console.log('in mainCtrl');
+
+    function tick(){
+      $scope.time = new Date();
+      $timeout(tick, 1000);
+    }
+    tick();
+  }]);
+
 angular.module('app').constant('AppSettings', constants);
 
 angular.module('app').config(onConfig);

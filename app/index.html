@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js">
+<html class="no-js" ng-controller="mainCtrl">
   <head>
       <base href="/">
       <meta charset="utf-8">
@@ -19,6 +19,7 @@
         <md-icon md-svg-icon="menu"></md-icon>
       </md-button>
       <h1>Infosys Accelerate - David</h1>
+      <span class="time">{{time  | date:'HH:mm:ss'}}</span>
     </md-toolbar>
 
     <div flex layout="row" >

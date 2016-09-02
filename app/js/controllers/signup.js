@@ -14,7 +14,7 @@ function SignupCtrl($scope, $http) {
       data: $scope.formData,
       responseType: 'json'
     }).then( function(resp){
-      alert("response: " + JSON.stringify(resp.data));
+      alert('response: ' + JSON.stringify(resp.data));
     });
     console.log('in save');
   };
