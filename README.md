@@ -1,6 +1,6 @@
 infosys - david.kim01
 
-1. Run `npm install` from the root directory
-2. Run `npm run dev`
+Note: node_modules directory is checked in.  Testing.
+1. Run `npm run dev`
 
 Browser ought to open automatically.
